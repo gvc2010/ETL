@@ -64,7 +64,7 @@ table_name = 'data_faturamento'
 sql_inserts = []
 
 for index, row in df_transformed_pd.iterrows():
-    values = "', '".join([str(x).replace("'", "''") for x in row.values])  # Escape de apóstrofos para SQL
+    values = "', '".join([str(x).replace("'", "''") for x in row.values])  
     sql_inserts.append(f"INSERT INTO {table_name} VALUES ('{values}');")
 
 with open('/content/data_faturamento_transformado.sql', 'w') as file:
