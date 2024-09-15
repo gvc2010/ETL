@@ -1,20 +1,23 @@
 
 ## 1. Instalação de Bibliotecas:
+# Instalar Pyspark e openpyxl
 ```bash
 !pip install pyspark
 !pip install openpyxl
 ```
 
-# 2. Criação da Sessão Spark:
+## 2. Criação da Sessão Spark:
 # Importe as bibliotecas necessárias e crie uma sessão Spark para usar as funcionalidades do PySpark.
+```bash
 from pyspark.sql import SparkSession
 import pandas as pd
 from pyspark.sql.functions import col
-
 spark = SparkSession.builder.appName("Exemplo ETL").getOrCreate()
+```
 
-# 3. Extração: Carregar o Arquivo Excel com Pandas:
+## 3. Extração: Carregar o Arquivo Excel com Pandas:
 # Carregue o arquivo Excel utilizando a biblioteca Pandas.
+
 df_excel = pd.read_excel('/content/data_faturamento.xlsx')
 
 # 4. Conversão para CSV:
