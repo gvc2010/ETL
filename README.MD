@@ -1,8 +1,9 @@
 
 ## 1. Instalação de Bibliotecas:
-# Instale PySpark e openpyxl no Google Colab para configurar o ambiente.
+```bash
 !pip install pyspark
 !pip install openpyxl
+```
 
 # 2. Criação da Sessão Spark:
 # Importe as bibliotecas necessárias e crie uma sessão Spark para usar as funcionalidades do PySpark.
