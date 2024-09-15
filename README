@@ -1,4 +1,5 @@
-# 1. Instalação de Bibliotecas:
+
+## 1. Instalação de Bibliotecas:
 # Instale PySpark e openpyxl no Google Colab para configurar o ambiente.
 !pip install pyspark
 !pip install openpyxl
@@ -54,5 +55,3 @@ with open('/content/data_faturamento_transformado.sql', 'w') as file:
 # 10. Encerrar a Sessão Spark:
 # Encerre a sessão Spark para liberar recursos.
 spark.stop()
-
-
