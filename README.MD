@@ -19,20 +19,20 @@ spark = SparkSession.builder.appName("Exemplo ETL").getOrCreate()
 ## 3. Extração: Carregar o Arquivo Excel com Pandas:
 ### Carregue o arquivo Excel utilizando a biblioteca Pandas.
 ```bash
-df_excel = pd.read_excel('/content/data_faturamento.xlsx')
+df_excel = pd.read_excel('data_faturamento.xlsx')
 ```
 
 ## 4. Conversão para CSV:
 ### Converta o DataFrame lido com Pandas para um arquivo CSV.
 
 ```bash
-df_excel.to_csv('/content/data_faturamento.csv', index=False)
+df_excel.to_csv('data_faturamento.csv', index=False)
 ```
 
 ## 5. Carregar o CSV usando PySpark:
 ### Leia o arquivo CSV usando PySpark e exiba os dados carregados.
 ```bash
-df_spark = spark.read.csv('/content/data_faturamento.csv', header=True, inferSchema=True)
+df_spark = spark.read.csv('data_faturamento.csv', header=True, inferSchema=True)
 df_spark.show()
 df_spark.printSchema()
 ```
@@ -48,7 +48,7 @@ df_transformed.show()
 ## 7. Salvar Dados Transformados em Novo CSV:
 ### Salve os dados transformados em um novo arquivo CSV.
 ```bash
-df_transformed.write.csv('/content/data_faturamento_transformado.csv', header=True)
+df_transformed.write.csv('data_faturamento_transformado.csv', header=True)
 ```
 
 ## 8. Converter PySpark DataFrame para Pandas:
@@ -67,7 +67,7 @@ for index, row in df_transformed_pd.iterrows():
     values = "', '".join([str(x).replace("'", "''") for x in row.values])  
     sql_inserts.append(f"INSERT INTO {table_name} VALUES ('{values}');")
 
-with open('/content/data_faturamento_transformado.sql', 'w') as file:
+with open('data_faturamento_transformado.sql', 'w') as file:
     file.write('\n'.join(sql_inserts))
 ```
 
